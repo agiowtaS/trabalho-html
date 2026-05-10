@@ -1,0 +1,251 @@
+:root {
+    --primary: #ffdf00;
+    --dark-bg: #002776;
+    --card-bg: #00308f;
+    --light-text: #ffffff;
+    --gray-text: #d6d6d6;
+    --border-color: rgba(255, 255, 255, 0.2);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+img {
+    width: 100%;
+    display: block;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.header-page {
+    position: fixed;
+    width: 100%;
+    background: rgba(0, 39, 118, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+}
+.header-container {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    font-size: 1.8rem;
+    color: var(--primary);
+}
+.header-menu {
+    display: flex;
+    gap: 25px;
+}
+.item-menu {
+    color: var(--light-text);
+
+    transition: 0.3s;
+}
+.item-menu:hover {
+    color: var(--primary);
+}
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+.video-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+.hero-content {
+    position: relative;
+    max-width: 700px;
+}
+.hero-content h2 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+.highlight {
+    color: var(--primary);
+}
+.hero-content p {
+    color: var(--gray-text);
+    font-size: 1.2rem;
+}
+section {
+    padding: 100px 0;
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: var(--primary);
+}
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+.card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+    border: 2px solid transparent;
+}
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+}
+.card img {
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    transition: 0.3s;
+}
+.card:hover img {
+    transform: scale(1.05);
+}
+.card-game-info {
+    padding: 20px;
+
+    text-align: center;
+}
+.card-game-info h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+.card-game-info p {
+    color: var(--gray-text);
+}
+.newsletter {
+    background: #001b50;
+}
+.newsletter-content {
+    text-align: center;
+}
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    max-width: 600px;
+    margin: 40px auto 0;
+}
+.newsletter-form input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+.newsletter-form button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary);
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.newsletter-form button:hover {
+    opacity: 0.8;
+}
+#newsletter-message {
+    margin-top: 20px;
+    font-weight: bold;
+}
+.contato-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.contato-form input,
+.contato-form textarea {
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+.contato-form button {
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary);
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+.footer {
+    background: #00153d;
+}
+.footer-container {
+    padding: 60px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.footer-brand p {
+    color: var(--gray-text);
+    margin-top: 10px;
+}
+.social-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 1.5rem;
+}
+.social-icons i {
+    transition: 0.3s;
+    cursor: pointer;
+}
+.social-icons i:hover {
+    color: var(--primary);
+}
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        height: auto;
+        padding: 15px 0;
+    }
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+    .newsletter-form {
+        flex-direction: column;
+    }
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
